@@ -1,10 +1,7 @@
-# %%
-import time
 from pprint import pprint
 import pandas as pd
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import pyautogui
 from selenium.webdriver.chrome.options import Options
 
 
@@ -24,8 +21,4 @@ itens = driver.find_elements(By.XPATH, "//span[@class='text-base font-semibold t
 for item in itens:
         all_itens.append(item.text)
 
-df = pd.read_excel('achados.xlsx', names=['Valor'])
-df.apply(all_itens)
-
 pprint(all_itens)
-# %%
